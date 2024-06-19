@@ -1,0 +1,24 @@
+/* aboutpage.css */
+
+/* Container */
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+  /* Image */
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Paragraph */
+  p {
+    line-height: 1.6;
+  }
+  

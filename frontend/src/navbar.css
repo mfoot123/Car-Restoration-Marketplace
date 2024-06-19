@@ -1,0 +1,41 @@
+/* navbar.css */
+
+/* Logo */
+.logo-img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+  }
+  
+  /* Dropdown */
+  .dropdown .btn-secondary {
+    background-color: #343a40;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+  }
+  
+  .dropdown-item {
+    color: #ffffff;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #495057;
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white on hover */
+  }
+  
