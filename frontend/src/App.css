@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app takes at least the full height of the viewport */
+}
+
+.inner {
+  width: auto;
+  max-width: 960px;
+  padding: 0px;
+  padding-top: 30px;
+}
+
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.inner {
+  padding: 1rem;
+}
+
+.cover {
+  padding: 5rem 1rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.mastfoot {
+  color: #6c757d;
+}
+
+.part {
+  margin: 1rem;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.shop {
+  margin: 2rem;
+}
+
