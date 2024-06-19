@@ -1,51 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar'; // Assuming you have a Navbar component
-import './shoppage.css'; // Import your CSS file
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
+import './shoppage.css';
+import image1 from './BoschLogo.png'; // Ensure this path is correct
+import image2 from './PorscheLogo.webp'; // Ensure this path is correct
+import image3 from './PierburgLogo.png'; // Ensure this path is correct
 
 function ShopPage() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch('http://localhost:4000/api/parts'); // Adjust URL as per your backend setup
-      if (!response.ok) {
-        throw new Error('Failed to fetch parts');
-      }
-      const data = await response.json();
-      setProducts(data); // Store fetched parts in state
-    } catch (error) {
-      console.error('Error fetching parts:', error);
-      // Handle error if needed
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const navigate = useNavigate();
 
   return (
-    <div className="full-page">
+    <div className="full-page dark-theme">
       <Navbar />
-      <div className="container mt-5">
-        <h2>Our Products</h2>
-        {isLoading && <p>Loading products...</p>}
-        <div className="row">
-          {products.map((part) => (
-            <div key={part.id} className="col-md-4 mb-4">
-              <div className="card">
-                <img src={part.image} className="card-img-top" alt={part.name} />
-                <div className="card-body">
-                  <h5 className="card-title">{part.name}</h5>
-                  <p className="card-text">{part.description}</p>
-                  <p className="card-text">${part.price}</p>
-                </div>
+      <div className="container-fluid full-height-container">
+        <div className="row full-height-row">
+          <div className="col-md-4 full-height-col clickable-column" onClick={() => navigate('/shop/BoschPage')}>
+            <div className="card full-height-card">
+              <img src={image1} className="card-img full-height-image" alt="Unique Page 1" />
+              <div className="card-body">
+                <h5 className="card-title">Unique Page 1</h5>
+                <p className="card-text">Description for Unique Page 1</p>
               </div>
             </div>
-          ))}
+          </div>
+          <div className="col-md-4 full-height-col clickable-column" onClick={() => navigate('/shop/PorschPage')}>
+            <div className="card full-height-card">
+              <img src={image2} className="card-img full-height-image" alt="Unique Page 2" />
+              <div className="card-body">
+                <h5 className="card-title">Unique Page 2</h5>
+                <p className="card-text">Description for Unique Page 2</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 full-height-col clickable-column" onClick={() => navigate('/shop/PierburgPage')}>
+            <div className="card full-height-card">
+              <img src={image3} className="card-img full-height-image" alt="Unique Page 3" />
+              <div className="card-body">
+                <h5 className="card-title">Unique Page 3</h5>
+                <p className="card-text">Description for Unique Page 3</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
