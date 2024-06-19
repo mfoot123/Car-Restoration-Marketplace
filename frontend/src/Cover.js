@@ -1,7 +1,7 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './cover.css'; // Import custom cover styles
-import logo from './SparkwerksLogo-transformed.webp'; // Import your custom logo image
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './cover.css';
+import logo from './SparkwerksLogo-transformed.webp';
 
 function Cover() {
   return (
@@ -19,7 +19,7 @@ function Cover() {
         <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="cover.css" rel="stylesheet" />
       </head>
-      <body className="d-flex min-vh-100 text-center text-bg-dark"> {/* Ensure full height with min-vh-100 */}
+      <body className="d-flex min-vh-100 text-center text-bg-dark">
         <svg xmlns="http://www.w3.org/2000/svg" className="d-none">
           <symbol id="check2" viewBox="0 0 16 16">
             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
@@ -104,10 +104,10 @@ function Cover() {
           </ul>
         </div>
 
-        <div className="cover-container d-flex min-vh-100 p-3 mx-auto flex-column w-100"> {/* Ensure full height with min-vh-100 */}
+        <div className="cover-container d-flex min-vh-100 p-3 mx-auto flex-column w-100">
           <header className="mb-auto">
             <div>
-              <img src={logo} alt="Logo" className="logo-img" /> {/* Replace text with image */}
+              <img src={logo} alt="Logo" className="logo-img" />
               <nav className="nav nav-masthead justify-content-center float-md-end">
                 <a className="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">
                   Home

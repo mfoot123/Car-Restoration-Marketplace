@@ -22,7 +22,7 @@ body {
 }
 
 .cover-container {
-    background-image: url('../public/DarkenedSparkswerksHomepage.png'); /* Adjust the path to your image */
+    background-image: url('../public/DarkenedSparkswerksHomepage.png');
     background-size: cover;
     background-position: center;
 }
@@ -34,12 +34,12 @@ body {
 .nav-masthead .nav-link {
   color: #fff;
   border-bottom: .25rem solid transparent;
-  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  color: rgba(255, 255, 255, 0.5);
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
