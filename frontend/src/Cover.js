@@ -1,5 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 import './cover.css';
 import logo from './SparkwerksLogo-transformed.webp';
 
@@ -103,42 +105,8 @@ function Cover() {
             </li>
           </ul>
         </div>
-
         <div className="cover-container d-flex min-vh-100 p-3 mx-auto flex-column w-100">
-          <header className="mb-auto">
-            <div>
-              <img src={logo} alt="Logo" className="logo-img" />
-              <nav className="nav nav-masthead justify-content-center float-md-end">
-                <a className="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">
-                  Home
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Shop
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  About
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Gallery
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Contact Us
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Before/after Gallery
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Customer Testomonials
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Fuel Pump Rebuild Process
-                </a>
-                <a className="nav-link fw-bold py-1 px-0" href="#">
-                  Distributor Restorations
-                </a>
-              </nav>
-            </div>
-          </header>
+        <Navbar />
 
           <main className="px-3">
             <h1>Welcome to Sparxwerks</h1>

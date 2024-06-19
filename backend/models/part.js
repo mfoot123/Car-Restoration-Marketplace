@@ -29,8 +29,9 @@ const Part = sequelize.define('Part', {
   }
 });
 
-sequelize.sync({ force: true }).then(() => {
-  Part.bulkCreate([
+// Seed the database with initial data
+sequelize.sync({ force: true }).then(async () => {
+  await Part.bulkCreate([
     { image: "https://via.placeholder.com/150", name: "Part 1", price: 10.99, quantity: 100, description: "Description for Part 1" },
     { image: "https://via.placeholder.com/150", name: "Part 2", price: 20.99, quantity: 150, description: "Description for Part 2" },
     { image: "https://via.placeholder.com/150", name: "Part 3", price: 30.99, quantity: 200, description: "Description for Part 3" }
