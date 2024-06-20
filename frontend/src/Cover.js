@@ -115,9 +115,6 @@ function Cover() {
               Now doing throttle body rebuilds.
             </p>
             <p className="lead">
-              <a href="#" className="btn btn-lg btn-light fw-bold border-white bg-white">
-                Learn more
-              </a>
             </p>
           </main>
 

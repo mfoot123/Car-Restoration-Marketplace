@@ -23,7 +23,7 @@ function ShopPage() {
               </div>
             </div>
           </div>
-          <div className="col-md-4 full-height-col clickable-column" onClick={() => navigate('/shop/PorschPage')}>
+          <div className="col-md-4 full-height-col clickable-column" onClick={() => navigate('/shop/PorschePage')}>
             <div className="card full-height-card">
               <img src={image2} className="card-img full-height-image" alt="Unique Page 2" />
               <div className="card-body">
