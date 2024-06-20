@@ -8,18 +8,23 @@ import BoschPage from './BoschPage';
 import PorschePage from './PorschePage';
 import PierburgPage from './PierburgPage';
 import Cart from './Cart';
-import Payment from './Payment'; // Assuming this is for another payment-related functionality
+import Payment from './Payment';
 
 function App() {
 
   const paymentFormProps = {
     applicationId: "sandbox-sq0idb-lP8QGiQrqXq7fcINKMzA7w",
     locationId: "LZ6AV300Z7P09",
-    cardTokenizeResponseReceived: async (errors, nonce, cardData) => {
-      if (errors) {
-        console.error('Encountered errors:', errors);
-        return;
-      }
+    cardTokenizeResponseReceived: async (responseObj, cardData) => {
+      console.log('Before errors');
+
+      const { token } = responseObj;
+
+    // Extracting nonce from token
+    const nonce = token;
+
+    // Logging nonce to verify
+    console.log('Nonce:', nonce); 
   
       // Example amount in cents (e.g., $10.00)
       const amount = 1000;
@@ -28,16 +33,17 @@ function App() {
         source_id: nonce,
         amount: amount,
       };
-  
+      console.log(nonce);
+      console.log('Before fetch');
       try {
-        const response = await fetch('/api/square/payment', {
+        const response = await fetch('http://localhost:4000/api/square/payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(paymentPayload),
-        });
-  
+        });        
+      
         if (response.ok) {
           const data = await response.json();
           console.log('Payment successful:', data);
@@ -49,7 +55,7 @@ function App() {
       } catch (error) {
         console.error('Error processing payment:', error);
         // Optionally handle network or other errors in your frontend
-      }
+      }      
     },
   };
   

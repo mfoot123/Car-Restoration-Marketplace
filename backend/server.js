@@ -8,8 +8,8 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Square credentials
-const accessToken = 'EAAAl4JDpIfLUbqXnLndpp2DiFUgPhcXOvLms_XRVlv8M9gZSh5B79Jgb5iI2YKz'; // Replace with your Square access token
-const locationId = 'LZ6AV300Z7P09'; // Replace with your Square location ID
+const accessToken = 'EAAAl4JDpIfLUbqXnLndpp2DiFUgPhcXOvLms_XRVlv8M9gZSh5B79Jgb5iI2YKz';
+const locationId = 'LZ6AV300Z7P09';
 
 // Square client configuration
 const defaultClient = SquareConnect.ApiClient.instance;
@@ -26,36 +26,42 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Endpoint to handle payment creation
-app.post('/api/square/payments', async (req, res) => {
+app.post('/api/square/payment', async (req, res) => {
   const requestBody = {
     source_id: req.body.source_id,
     amount_money: {
       amount: req.body.amount,
-      currency: 'USD', // Adjust based on your currency
+      currency: 'USD',
     },
     location_id: locationId,
     idempotency_key: `${Date.now()}`,
   };
 
-  console.log('Payment request:', requestBody); // Log the request body
+  console.log('Payment request:', requestBody); 
 
   try {
     const response = await paymentsApi.createPayment(requestBody);
-    console.log('Payment response:', response); // Log successful payment response
+    console.log('Payment response:', response);
     res.status(200).json(response);
   } catch (error) {
     console.error('Error creating payment:', error);
-
-    if (error.response && error.response.data) {
-      console.error('Square API error:', error.response.data.errors);
-      res.status(500).json({ error: error.response.data.errors });
-    } else if (error.response && error.response.status === 401) {
-      console.error('Square API error: Unauthorized');
-      res.status(401).json({ error: 'Unauthorized' });
-    } else {
-      res.status(500).json({ error: 'Unknown error occurred' });
+  
+    let status = 500;
+    let errorMessage = 'Unknown error occurred';
+  
+    if (error.response) {
+      if (error.response.status === 401) {
+        console.error('Square API error: Unauthorized');
+        status = 401;
+        errorMessage = 'Unauthorized';
+      } else if (error.response.data && error.response.data.errors) {
+        console.error('Square API error:', error.response.data.errors);
+        errorMessage = error.response.data.errors;
+      }
     }
-  }  
+  
+    res.status(status).json({ error: errorMessage });
+  }
 });
 
 // Start server
