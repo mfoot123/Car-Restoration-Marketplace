@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { PaymentForm } from 'react-square-web-payments-sdk';
 import Cover from './Cover';
 import ShopPage from './ShopPage';
 import AboutPage from './AboutPage';
@@ -8,27 +7,26 @@ import BoschPage from './BoschPage';
 import PorschePage from './PorschePage';
 import PierburgPage from './PierburgPage';
 import Cart from './Cart';
-import Payment from './Payment';
+import PaymentForm from './Payment';
+import { PaymentForm as SquarePaymentForm } from 'react-square-web-payments-sdk';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (name, price) => {
+    setCart([...cart, { name, price }]);
+  };
 
   const paymentFormProps = {
     applicationId: "sandbox-sq0idb-lP8QGiQrqXq7fcINKMzA7w",
     locationId: "LZ6AV300Z7P09",
     cardTokenizeResponseReceived: async (responseObj, cardData) => {
       console.log('Before errors');
-
       const { token } = responseObj;
-
-    // Extracting nonce from token
-    const nonce = token;
-
-    // Logging nonce to verify
-    console.log('Nonce:', nonce); 
-  
-      // Example amount in cents (e.g., $10.00)
-      const amount = 1000;
-  
+      const nonce = token;
+      console.log('Nonce:', nonce);
+      // Calculate total cart amount
+      const amount = cart.reduce((acc, item) => acc + item.price, 0) * 100; // Convert to cents
       const paymentPayload = {
         source_id: nonce,
         amount: amount,
@@ -42,40 +40,35 @@ function App() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(paymentPayload),
-        });        
-      
+        });
+
         if (response.ok) {
           const data = await response.json();
           console.log('Payment successful:', data);
-          // Optionally handle success response in your frontend
         } else {
           console.error('Payment failed:', response.statusText);
-          // Optionally handle failure response in your frontend
         }
       } catch (error) {
         console.error('Error processing payment:', error);
-        // Optionally handle network or other errors in your frontend
-      }      
+      }
     },
   };
-  
-  
 
   return (
-    <PaymentForm {...paymentFormProps}>
+    <SquarePaymentForm {...paymentFormProps}>
       <Router>
         <Routes>
           <Route path="/" element={<Cover />} />
-          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop" element={<ShopPage addToCart={addToCart} />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/shop/BoschPage" element={<BoschPage />} />
-          <Route path="/shop/PorschePage" element={<PorschePage />} />
-          <Route path="/shop/PierburgPage" element={<PierburgPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/payments" element={<Payment />} />
+          <Route path="/shop/BoschPage" element={<BoschPage addToCart={addToCart} />} />
+          <Route path="/shop/PorschePage" element={<PorschePage addToCart={addToCart} />} />
+          <Route path="/shop/PierburgPage" element={<PierburgPage addToCart={addToCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} addToCart={addToCart} />} />
+          <Route path="/payments" element={<PaymentForm cart={cart} />} />
         </Routes>
       </Router>
-    </PaymentForm>
+    </SquarePaymentForm>
   );
 }
 

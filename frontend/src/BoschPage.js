@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import './BoschPage.css';
 
-const BoschPage = () => {
+const BoschPage = ({ addToCart }) => {
+
   return (
     <>
       <style>
@@ -34,8 +35,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 p-3">
@@ -43,8 +43,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 py-3">
@@ -52,8 +51,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 p-3">
@@ -61,8 +59,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
         </div>
 
@@ -73,8 +70,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 py-3">
@@ -82,8 +78,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 p-3">
@@ -91,8 +86,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 py-3">
@@ -100,8 +94,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
         </div>
 
@@ -112,8 +105,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 p-3">
@@ -121,8 +113,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 py-3">
@@ -130,8 +121,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-body-tertiary shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
           <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div className="my-3 p-3">
@@ -139,8 +129,7 @@ const BoschPage = () => {
               <p className="lead">And an even wittier subheading.</p>
             </div>
             <div className="bg-dark shadow-sm mx-auto" style={{ width: '80%', height: '300px', borderRadius: '21px 21px 0 0' }}></div>
-            <button className="btn btn-primary btn-custom mt-3">Buy Now</button>
-            <p className="lead mt-2">$199.99</p>
+            <button className="btn btn-primary btn-custom mt-3" onClick={() => addToCart('Product 1', 199.99)}>Buy Now</button>            <p className="lead mt-2">$199.99</p>
           </div>
         </div>
       </main>

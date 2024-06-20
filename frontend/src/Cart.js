@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Navbar from './Navbar';
 
-const Cart = () => {
-  const [items, setItems] = useState([
-    { id: 1, name: 'Product 1', price: 10.00 },
-    { id: 2, name: 'Product 2', price: 20.00 },
-  ]);
-
-  const calculateTotal = () => {
-    return items.reduce((total, item) => total + item.price, 0).toFixed(2);
-  };
+const Cart = ({ cart }) => {
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div>
-      <h2>Cart</h2>
-      {items.map(item => (
-        <div key={item.id}>
-          <p>{item.name} - ${item.price.toFixed(2)}</p>
-        </div>
-      ))}
-      <h3>Total: ${calculateTotal()}</h3>
-      <button>Checkout</button>
+      <Navbar />
+      <h2>Your Cart</h2>
+      <ul>
+        {cart.map((item, index) => (
+          <li key={index}>
+            {item.name} - ${item.price.toFixed(2)}
+          </li>
+        ))}
+      </ul>
+      <h3>Total: ${total.toFixed(2)}</h3>
     </div>
   );
 };
