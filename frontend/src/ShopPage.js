@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import './shoppage.css';
-import image1 from './BoschLogo.png'; // Ensure this path is correct
-import image2 from './PorscheLogo.webp'; // Ensure this path is correct
-import image3 from './PierburgLogo.png'; // Ensure this path is correct
+import image1 from './BoschLogo.png';
+import image2 from './PorscheLogo.webp';
+import image3 from './PierburgLogo.png';
 
 function ShopPage() {
   const navigate = useNavigate();
