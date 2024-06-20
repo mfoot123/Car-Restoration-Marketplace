@@ -68,8 +68,8 @@ function Navbar() {
                 </Link>
               </li>
               <Link className="dropdown-item" to="/payments">
-                  Payment
-                </Link>
+                  Cart
+              </Link>
             </ul>
           </div>
         </nav>

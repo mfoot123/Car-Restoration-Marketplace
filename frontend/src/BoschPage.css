@@ -150,3 +150,12 @@ body {
     height: .75em;
   }
   
+  .btn-custom {
+    background-color: #e5e5e5;
+    color: #000;
+  }
+  
+  .btn-custom:hover {
+    background-color: #ccc;
+  }
+  
