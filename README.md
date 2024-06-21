@@ -1,6 +1,6 @@
 # Car-Restoration-Marketplace
 
-## Descrption
+## Description
 
 Car part restoration site modeled after https://www.sparxwerks.com/
 
