@@ -29,7 +29,7 @@ Adding products (images, prices, quantity, etc.)
 ![Contact Us Page](frontend/public/screenshots/ShoppageScreenshot.png)
 
 ### Screenshot 3: Product Page
-![Product Page](screenshots/product_page.png)
+![Product Page](frontend/public/screenshots/ProductpageScreenshot.png)
 
 ### Screenshot 4: Cart Page
 ![Cart Page](frontend/public/screenshots/CheckoutpageScreenshot.png)
