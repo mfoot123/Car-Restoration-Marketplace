@@ -18,8 +18,8 @@ function ShopPage() {
             <div className="card full-height-card">
               <img src={image1} className="card-img full-height-image" alt="Unique Page 1" />
               <div className="card-body">
-                <h5 className="card-title">Unique Page 1</h5>
-                <p className="card-text">Description for Unique Page 1</p>
+                <h5 className="card-title">Bosch</h5>
+                <p className="card-text">Description</p>
               </div>
             </div>
           </div>
@@ -27,8 +27,8 @@ function ShopPage() {
             <div className="card full-height-card">
               <img src={image2} className="card-img full-height-image" alt="Unique Page 2" />
               <div className="card-body">
-                <h5 className="card-title">Unique Page 2</h5>
-                <p className="card-text">Description for Unique Page 2</p>
+                <h5 className="card-title">Porsche</h5>
+                <p className="card-text">Description</p>
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@ function ShopPage() {
             <div className="card full-height-card">
               <img src={image3} className="card-img full-height-image" alt="Unique Page 3" />
               <div className="card-body">
-                <h5 className="card-title">Unique Page 3</h5>
-                <p className="card-text">Description for Unique Page 3</p>
+                <h5 className="card-title">Pierburg</h5>
+                <p className="card-text">Description</p>
               </div>
             </div>
           </div>

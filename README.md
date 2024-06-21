@@ -22,4 +22,17 @@ Adding products (images, prices, quantity, etc.)
 
 ## Gallery
 
+### Screenshot 1: Homepage
+![Homepage](frontend/public/screenshots/HomepageScreenshot.png)
+
+### Screenshot 2: Shop Page
+![Contact Us Page](frontend/public/screenshots/ShoppageScreenshot.png)
+
+### Screenshot 3: Product Page
+![Product Page](screenshots/product_page.png)
+
+### Screenshot 4: Cart Page
+![Cart Page](frontend/public/screenshots/CheckoutpageScreenshot.png)
+
+
 
