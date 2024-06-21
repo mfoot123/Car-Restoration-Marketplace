@@ -12,13 +12,13 @@ Adding products (images, prices, quantity, etc.)
 
 ## To Do List
 
-- Cart
 - Gallery
 - Contact Us
 - Customer Testomonials
 - Fuel Pump Rebuild Process
 - Distributor Restorations
 - Light Mode
+- Database Stuff
 
 ## Gallery
 
