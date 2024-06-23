@@ -19,6 +19,7 @@ Adding products (images, prices, quantity, etc.)
 - Distributor Restorations
 - Light Mode
 - Database Stuff
+- Remove from cart function
 
 ## Gallery
 
