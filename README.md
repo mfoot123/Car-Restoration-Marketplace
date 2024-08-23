@@ -18,8 +18,8 @@ Adding products (images, prices, quantity, etc.)
 - Fuel Pump Rebuild Process
 - Distributor Restorations
 - Light Mode
-- Database Stuff
 - Remove from cart function
+- Accounts (only certain users can access the add to DB form)
 
 ## Gallery
 
