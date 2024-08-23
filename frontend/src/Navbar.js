@@ -67,9 +67,16 @@ function Navbar() {
                   Distributor Restorations
                 </Link>
               </li>
-              <Link className="dropdown-item" to="/payments">
-                  Cart
-              </Link>
+              <li>
+                <Link className="dropdown-item" to="/payments">
+                    Cart
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/productform">
+                  Product Form
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

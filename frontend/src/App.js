@@ -8,6 +8,7 @@ import PorschePage from './PorschePage';
 import PierburgPage from './PierburgPage';
 import Cart from './Cart';
 import PaymentForm from './Payment';
+import ProductForm from './ProductForm';
 import { PaymentForm as SquarePaymentForm } from 'react-square-web-payments-sdk';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
           <Route path="/shop/PierburgPage" element={<PierburgPage addToCart={addToCart} />} />
           <Route path="/cart" element={<Cart cart={cart} addToCart={addToCart} />} />
           <Route path="/payments" element={<PaymentForm cart={cart} />} />
+          <Route path="/productform" element={<ProductForm />} />
         </Routes>
       </Router>
     </SquarePaymentForm>

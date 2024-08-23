@@ -5,7 +5,7 @@ const Products = () => {
   const [parts, setParts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/parts')
+    axios.get('http://localhost:3001/api/products')
       .then(response => {
         console.log("Data fetched successfully:", response.data);
         setParts(response.data);
